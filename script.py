@@ -54,7 +54,7 @@ time.sleep(2);
 img = pathName + '/img.png'
 print(img)
 coor = pyautogui.locateCenterOnScreen(img, confidence=.7)
-x = coor[0] / 2
+x = coor[0] / 2 # It's divide by two because of the retina resolution particularities
 y = coor[1] / 2
 pyautogui.moveTo((x, y))
 pyautogui.click((x, y))
