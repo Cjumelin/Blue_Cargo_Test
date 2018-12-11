@@ -1,12 +1,54 @@
-import pyautogui, time, os
+import pyautogui, time, os, datetime
+
 pathName = os.getenv('PWD')
 print(pathName)
-#time.sleep(1);
-pyautogui.hotkey('command', 'space')
-#time.sleep(1);
 
+pyautogui.hotkey('command', 'space')
+pyautogui.typewrite('Sublime Text')
+pyautogui.press('enter')
+time.sleep(.2)
+pyautogui.hotkey('command', 'n')
+time.sleep(.2)
+now = datetime.datetime.now()
+strToBlueCargoFile = "Hi Bluecargo, today is " + str(now) + "."
+pyautogui.typewrite(strToBlueCargoFile)
+pyautogui.hotkey('command', 'shift', 's')
+pyautogui.typewrite('BlueCargoFile')
+desktopDayModeOff = pathName + '/desktopDayModeOff.png'
+print(desktopDayModeOff)
+time.sleep(.2);
+coor = pyautogui.locateCenterOnScreen(desktopDayModeOff, confidence=.7)
+print (coor)
+if coor:
+    x = coor[0] / 2
+    y = coor[1] / 2
+    pyautogui.moveTo((x, y))
+    pyautogui.click((x, y))
+    saveBlueCargoFile = pathName + '/saveBlueCargoFile.png'
+    print(saveBlueCargoFile)
+    time.sleep(.2);
+    coor = pyautogui.locateCenterOnScreen(saveBlueCargoFile, confidence=.7)
+    print (coor)
+    if coor:
+        x = coor[0] / 2
+        y = coor[1] / 2
+        pyautogui.moveTo((x, y))
+        pyautogui.click((x, y))
+        replaceBlueCargoFile = pathName + '/replaceBlueCargoFile.png'
+        print(replaceBlueCargoFile)
+        time.sleep(.2);
+        coor = pyautogui.locateCenterOnScreen(replaceBlueCargoFile, confidence=.7)
+        print (coor)
+        if coor:
+            x = coor[0] / 2
+            y = coor[1] / 2
+            pyautogui.moveTo((x, y))
+            pyautogui.click((x, y))
+
+time.sleep(.5)
+
+pyautogui.hotkey('command', 'space')
 pyautogui.typewrite('mail')
-#time.sleep(1);
 pyautogui.press('enter')
 time.sleep(2);
 img = pathName + '/img.png'
@@ -17,7 +59,7 @@ y = coor[1] / 2
 pyautogui.moveTo((x, y))
 pyautogui.click((x, y))
 print(coor)
-pyautogui.typewrite('cjumelin@protonmail.com')
+pyautogui.typewrite('jobs@bluecargo.io')
 pyautogui.press('tab')
 pyautogui.press('tab')
 pyautogui.typewrite('Hacker - Challenge')
@@ -31,12 +73,58 @@ if coor:
     y = coor[1] / 2
     pyautogui.moveTo((x, y))
     pyautogui.click((x, y))
-
-    desktopOn = pathName + '/desktopOn.png'
-    print(desktopOn)
-    if pyautogui.locateCenterOnScreen(desktopOff, confidence=.7):
+    desktopOff = pathName + '/desktopOff.png'
+    print(desktopOff)
+    time.sleep(1);
+    coor = pyautogui.locateCenterOnScreen(desktopOff, confidence=.7)
+    print (coor)
+    if coor:
         x = coor[0] / 2
         y = coor[1] / 2
         pyautogui.moveTo((x, y))
         pyautogui.click((x, y))
-
+        pyautogui.hotkey('command', 'f')
+        pyautogui.typewrite('BlueCargoFile')
+        blueCargoFileNightMode = pathName + '/blueCargoFileNightMode.png'
+        print(blueCargoFileNightMode)
+        time.sleep(.2);
+        coor = pyautogui.locateCenterOnScreen(blueCargoFileNightMode, confidence=.7)
+        print (coor)
+        if coor:
+            x = coor[0] / 2
+            y = coor[1] / 2
+            pyautogui.moveTo((x, y))
+            pyautogui.click((x, y))
+            time.sleep(.2)
+        else :
+            blueCargoFileNightModeGray = pathName + '/blueCargoFileNightModeGray.png'
+            print(blueCargoFileNightModeGray)
+            time.sleep(.2);
+            coor = pyautogui.locateCenterOnScreen(blueCargoFileNightModeGray, confidence=.7)
+            print (coor)
+            if coor:
+                x = coor[0] / 2
+                y = coor[1] / 2
+                pyautogui.moveTo((x, y))
+                pyautogui.click((x, y))
+        if coor:
+            chooseBlueCargoFile = pathName + '/chooseBlueCargoFile.png'
+            print(chooseBlueCargoFile)
+            time.sleep(.2);
+            coor = pyautogui.locateCenterOnScreen(chooseBlueCargoFile, confidence=.7)
+            print (coor)
+            if coor:
+                x = coor[0] / 2
+                y = coor[1] / 2
+                pyautogui.moveTo((x, y))
+                pyautogui.click((x, y))
+                sendMail = pathName + '/sendMail.png'
+                print(sendMail)
+                time.sleep(.2);
+                coor = pyautogui.locateCenterOnScreen(sendMail, confidence=.7)
+                print (coor)
+                if coor:
+                    x = coor[0] / 2
+                    y = coor[1] / 2
+                    pyautogui.moveTo((x, y))
+                    pyautogui.click((x, y))
